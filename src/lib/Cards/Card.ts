@@ -3,7 +3,7 @@ import type { Fill } from "./Features/Fill";
 import type { Shape } from "./Features/Shape";
 
 
-export class Card {
+export class CardModel {
     public colour: Colour;
     public shape: Shape;
     public amount: number;
