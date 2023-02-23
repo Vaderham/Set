@@ -1,19 +1,19 @@
-import type { Card } from "../Cards/Card";
+import type { CardModel } from "../Cards/Card";
 
 export class DeckController {
-    private deck: Card[];
-    private cardsInPlay: Card[] = [];
+    private deck: CardModel[];
+    private cardsInPlay: CardModel[] = [];
 
-    constructor(deck: Card[]){
+    constructor(deck: CardModel[]){
         this.deck = this.shuffle(deck);
     }
 
-    public dealStartingCards(): Card[]{
+    public dealStartingCards(): CardModel[]{
         this.dealCards(12);
         return this.cardsInPlay;
     }
 
-    public dealCards(numberToDeal: number): Card[]{
+    public dealCards(numberToDeal: number): CardModel[]{
         if(this.deck.length < numberToDeal) {
             this.cardsInPlay.push(...this.deck.splice(0, this.deck.length));
             return this.cardsInPlay;
@@ -22,7 +22,7 @@ export class DeckController {
         return this.cardsInPlay;
     }
 
-    private shuffle(deck: Card[]): Card[] {
+    private shuffle(deck: CardModel[]): CardModel[] {
         let currentIndex = deck.length;
         let randomIndex: number;
       
