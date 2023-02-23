@@ -19,6 +19,7 @@ export class SetService {
         return sets;
     }
 
+    //TODO: Refactor this to take in a cardModel array
     public isSet(card1: CardModel, card2: CardModel, card3: CardModel): boolean{
         return ((card1.amount - 1) + (card2.amount - 1) + (card3.amount - 1)) % 3 === 0
             && ((card1.colour.id) + (card2.colour.id) + (card3.colour.id)) % 3 === 0
