@@ -17,6 +17,4 @@ export class CardModel {
         this.fill = fill;
         this.selected = false;
     }
-
-
 }
